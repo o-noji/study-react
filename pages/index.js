@@ -1,8 +1,8 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { Footer } from "../componets/Footer";
-import Links from "../componets/Links";
-import Headline from "../componets/Headline";
+import { Links } from "../componets/Links";
+import { Headline } from "../componets/Headline";
 
 export default function Home() {
   return (
