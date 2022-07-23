@@ -1,13 +1,14 @@
 import Link from "next/Link";
+import classes from "./Header.module.css";
 
 export function Header() {
   return (
-    <header>
+    <header className={classes.header}>
       <Link href="/">
-        <a>Index</a>
+        <a className={classes.anchor}>Index</a>
       </Link>
       <Link href="/about">
-        <a>About</a>
+        <a className={classes.anchor}>About</a>
       </Link>
     </header>
   );
