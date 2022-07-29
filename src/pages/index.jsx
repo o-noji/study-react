@@ -3,7 +3,7 @@ import styles from "src/styles/Home.module.css";
 import { Footer } from "src/componets/Footer";
 import { Main } from "src/componets/Main";
 import { Header } from "src/componets/Header";
-import { useCallback, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 // const handleClick = (e) => {
 //   console.log(e.target.href);
@@ -11,19 +11,16 @@ import { useCallback, useEffect } from "react";
 // };
 
 export default function Home() {
-  // const foo = 1;
+  const [count, setCount] = useState(1);
 
-  // const handleClick = useCallback((e) => {
-  //   console.log(e.target.href);
-  //   e.preventDefault();
-  //   alert(foo);
-  // }, []);
+  const handleClick = (e) => {
+    setCount((count) => count + 1);
+    setCount((count) => count + 1);
+  };
 
   useEffect(() => {
-    console.log("マウント時");
     document.body.style.backgroundColor = "#ccc";
     return () => {
-      console.log("アンマウント時");
       document.body.style.backgroundColor = "";
     };
   }, []);
@@ -34,9 +31,8 @@ export default function Home() {
         <title>Index Page</title>
       </Head>
       <Header />
-      {/* <a href="/about" onClick={handleClick}>
-        ボタン
-      </a> */}
+      <h1>{count}</h1>
+      <button onClick={handleClick}>ボタン</button>
       <Main page="index" />
       <Footer />
     </div>
