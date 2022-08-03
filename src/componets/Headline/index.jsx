@@ -1,6 +1,6 @@
 import classes from "src/componets/Headline/Headline.module.css";
 
-export function Headline(props) {
+export const Headline = (props) => {
   return (
     <div>
       <h1 className={classes.title}>{props.page} pages</h1>
@@ -12,4 +12,4 @@ export function Headline(props) {
       <button onClick={props.handlereduce}>減らす</button>
     </div>
   );
-}
+};

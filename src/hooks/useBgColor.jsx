@@ -19,7 +19,6 @@ export const useBgColor = () => {
         return "";
       }
     }
-    // return router.pathname === "/" ? "lightblue" : "beige";
   }, [router.pathname]);
 
   useEffect(() => {
