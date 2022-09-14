@@ -1,7 +1,7 @@
-import useSWR from "swr";
+import useSWRImmutable from "swr/immutable";
 
 export const UserByUserId = (props) => {
-  const { data, error } = useSWR(
+  const { data, error } = useSWRImmutable(
     props.id ? `https://jsonplaceholder.typicode.com/users/${props.id}` : null
   );
   if (!data && !error) {
