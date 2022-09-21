@@ -1,17 +1,22 @@
 import Link from "next/link";
-import { usePosts } from "src/hooks/useFetchArray";
+import { useFetchArray } from "src/hooks/useFetchArray";
+import { API_URL } from "src/utils/const";
 
-export const Posts = () => {
-  const { data, error, isLoading, isEmpty } = usePosts();
+export const PostListByUserId = (props) => {
+  const { data, error, isLoading, isEmpty } = useFetchArray(
+    props.id ? `${API_URL}/users/${props.id}/posts` : null
+  );
 
   if (isLoading) {
     return <div>ローディング中</div>;
   }
+
   if (error) {
     return <div>{error.message}</div>;
   }
+
   if (isEmpty) {
-    return <div>データは空です。</div>;
+    return <div>データは空です</div>;
   }
 
   return (
@@ -21,7 +26,7 @@ export const Posts = () => {
           <li key={post.id}>
             <Link href={`/posts/${post.id}`}>
               <a className="block group">
-                <h1 className="tect-xl font-bold group-hover:text-blue-500">
+                <h1 className="text-xl font-bold group-hover:text-blue-500">
                   {post.title}
                 </h1>
                 <p className="text-lg text-gray-500 group-hover:text-blue-400">

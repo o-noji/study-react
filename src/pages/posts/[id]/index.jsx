@@ -1,11 +1,9 @@
-import { Header } from "src/componets/Header";
-import { Post } from "src/componets/Post";
+import { PostDetail } from "src/components/Post/PostDetail";
 
 const PostsId = () => {
   return (
     <div>
-      <Header />
-      <Post />
+      <PostDetail />
     </div>
   );
 };
